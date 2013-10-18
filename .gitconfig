@@ -1,0 +1,39 @@
+[push]
+  default = current
+
+[branch]
+  autosetuprebase = always
+
+[color]
+  ui = auto
+
+[alias]
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold red)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold magenta)%aD%C(reset) %C(green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  r  = rebase
+  st = status
+  fa = fetch --all
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t = \\2/' | sort
+  b = branch -a
+  br = browse-remote
+  ci = commit
+  co = checkout
+  d = diff
+  dc = diff --cached
+  f = fetch --prune
+  fs = !git f && git su
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+  info = remote show origin
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+  ll = log --stat --abbrev-commit
+  ln = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
+  lp = log --oneline -p
+  lc = !git --no-pager log --color --graph --abbrev-commit --decorate --pretty=oneline  -n
+  ls = log --stat --abbrev-commit -n 1 # display previous log
+  s = status --short --branch
+  su = submodule update
+[user]
+	name = Rishabh Mahajan
+	email = rishabhmhjn@gmail.com
