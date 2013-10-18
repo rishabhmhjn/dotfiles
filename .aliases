@@ -1,0 +1,35 @@
+# Dir navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ~='cd ~'
+
+# Utilities
+alias a="ack -ia"
+alias b="bundle exec"
+alias c="pygmentize -O style=monokai -f console256 -g"
+alias d="du -h -d=1"
+alias df='df -h'
+alias du='du -h -c'
+alias g="git"
+alias grep="grep --color=auto"
+alias h="history"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
+alias localip="ipconfig getifaddr en1"
+alias mp="mvim -p"
+alias rkt="racket -il xrepl"
+alias tmux="tmux -2"
+
+alias view='vi -R'
+alias vp="vim -p"
+# alias view="vim -p -R"
+
+# ls
+alias ls='ls -G'
+alias ll='ls -lhG'
+alias la='ls -lAhG'
+alias mkdir='mkdir -p'
+
+
+alias rishenv-update='~/.dotfiles/bootstrap.sh'
