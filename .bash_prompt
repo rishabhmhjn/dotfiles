@@ -9,8 +9,8 @@ if tput setaf 1 &> /dev/null; then
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
       MAGENTA=$(tput setaf 9)
       ORANGE=$(tput setaf 172)
-      GREEN=$(tput setaf 190)
-      PURPLE=$(tput setaf 141)
+      GREEN=$(tput setaf 148)
+      PURPLE=$(tput setaf 92)
       WHITE=$(tput setaf 0)
     else
       MAGENTA=$(tput setaf 5)
@@ -38,6 +38,18 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-# PS1="\[${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 
-PS1="\[\033[0m\][\[\033[00;31m\]\u\[\033[0m\]@\h \[\033[0;35m\]\W\[\033[0m\]]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"[\")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"]\")\$ "
+ps_now() {
+  echo `date "+%Y-%m-%d %H:%M:%S"`
+}
+
+
+ps_reset() {
+  PS1="\[\033[0m\][\[\033[00;31m\]\u\[\033[0m\]@\h \[\033[0;35m\]\W\[\033[0m\]]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"[\")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"]\")\$ "
+}
+
+ps_t1() {
+  PS1="\n[\[${MAGENTA}\]\u\[$WHITE\]@\h \[$PURPLE\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]] (\$(ps_now))\n\$ \[$RESET\]"
+}
+
+ps_reset
