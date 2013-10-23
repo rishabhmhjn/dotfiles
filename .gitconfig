@@ -14,11 +14,11 @@
   chpk = cherry-pick
 
   # status
-  s  = status --short --branch
-  st = status
-  ss = status -s
-  sh = show
-  so = remote show origin
+  s   = status --short --branch
+  st  = status
+  ss  = status -s
+  sh  = show
+  so  = remote show origin
   brr = browse-remote
 
   # pull/push/fetch
@@ -66,6 +66,7 @@
   ba  = branch -a
   bm  = branch --merged
   bn  = branch --no-merged
+  bnd = branch --no-merged develop
   bo  = branch -r
 
   # log
@@ -74,7 +75,7 @@
   tree = log --graph --decorate --pretty=oneline --abbrev-commit --color
   lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold red)%d%C(reset)' --all
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold magenta)%aD%C(reset) %C(green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-  lg  = !"git lg1"
+  lg  = !git lg1
   ls  = log --stat
   la  = log --pretty=\"format:%ad %h (%an): %s\" --date=short  # ざっくりログ出す
   lr  = log origin
@@ -91,9 +92,10 @@
   ranking = shortlog -s -n --no-merges
   log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
   log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+  unpushed = log --branches --not --remotes --simplify-by-decoration --decorate --oneline
 
   # reset
-  r0    = reset HEAD
+  r0   = reset HEAD
   r1   = reset HEAD~
   r2   = reset HEAD~~
   r3   = reset HEAD~~~
@@ -129,5 +131,5 @@
   d10 = diff HEAD~~~~~~~~~~
 
 [user]
-  name = Rishabh Mahajan
+  name  = Rishabh Mahajan
   email = rishabhmhjn@gmail.com
