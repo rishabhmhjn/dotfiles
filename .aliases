@@ -6,7 +6,7 @@ alias ~='cd ~'
 
 # Utilities
 alias a="ack -ia"
-alias b="bundle exec"
+alias be="bundle exec"
 alias c="pygmentize -O style=monokai -f console256 -g"
 alias d="du -h -d=1"
 alias df='df -h'
@@ -32,4 +32,4 @@ alias la='ls -lAhG'
 alias mkdir='mkdir -p'
 
 
-alias rishenv-update='~/.dotfiles/bootstrap.sh'
+alias dotfiles-u='~/.dotfiles/bootstrap.sh'
