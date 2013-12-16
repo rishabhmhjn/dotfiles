@@ -7,12 +7,14 @@ alias ~='cd ~'
 # Utilities
 alias a="ack -ia"
 alias be="bundle exec"
+alias berc="bundle exec rails console"
 alias c="pygmentize -O style=monokai -f console256 -g"
 alias d="du -h -d=1"
 alias df='df -h'
 alias du='du -h -c'
 alias g="git"
 alias grep="grep --color=auto"
+alias fgrep="LANG=C grep" # https://blog.x-way.org/Linux/2013/12/15/Make-grep-50x-faster.html
 alias h="history"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
