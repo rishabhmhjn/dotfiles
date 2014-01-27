@@ -54,4 +54,15 @@ ps_t1() {
   PS1="\n[\[${MAGENTA}\]\u\[$WHITE\]@\h \[$PURPLE\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]] (\$(ps_now))\n\$ \[$RESET\]"
 }
 
+
+ps_mysql1() {
+  export MYSQL_PS1="\n[\u@\h \d](\D)\n> "
+}
+
+ps_mysql_reset() {
+  export MYSQL_PS1="mysql> "
+}
+
+
 ps_reset
+ps_mysql1
