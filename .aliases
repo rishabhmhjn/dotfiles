@@ -33,5 +33,7 @@ alias ll='ls -lhG'
 alias la='ls -lAhG'
 alias mkdir='mkdir -p'
 
+# misc
+alias gr='grunt'
 
 alias dotfiles-u='~/.dotfiles/bootstrap.sh'
