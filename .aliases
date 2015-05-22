@@ -28,7 +28,7 @@ alias vp="vim -p"
 # alias view="vim -p -R"
 
 # ls
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ll='ls -lhG'
 alias la='ls -lAhG'
 alias mkdir='mkdir -p'

@@ -130,6 +130,9 @@
   d5  = diff HEAD~~~~~
   d10 = diff HEAD~~~~~~~~~~
 
+  # go to root folder
+  root = !cd "$(git rev-parse --show-toplevel)"
+
 [user]
   name  = Rishabh Mahajan
   email = rishabhmhjn@gmail.com

@@ -133,3 +133,11 @@ popd
 source $HOME/.bashrc
 notice "Done"
 # exec $SHELL -l
+
+notice "Please add the following to your .bashrc or .bash_profile"
+cat <<END
+
+  # Common junk
+  [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc""
+  
+END
