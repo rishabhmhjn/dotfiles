@@ -138,6 +138,6 @@ notice "Please add the following to your .bashrc or .bash_profile"
 cat <<END
 
   # Common junk
-  [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc""
+  [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
   
 END
